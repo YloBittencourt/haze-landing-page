@@ -255,7 +255,7 @@
   .spotify-embed{margin:0 0 14px; border-radius:12px; overflow:hidden;}
   .spotify-embed iframe{display:block; width:100%; height:152px; border-radius:12px;}
   
-  /* NOVA CLASSE: Para criar o efeito de Leque/Tracklist com iframes compactos */
+  /* CLASSE DO EP/ÁLBUM: Para criar o efeito de Leque/Tracklist com iframes compactos */
   .ep-tracklist {
     display: flex;
     flex-direction: column;
@@ -439,25 +439,56 @@
     </div>
 
     <div class="releases reveal">
-      <!-- Card 1: Single -->
+      
+      <!-- Card 1: Álbum Jardim Secreto -->
       <article class="release-card">
         <div class="cover">
-          <img src="images/capa1.jpeg" alt="Capa de Vilão" style="width:100%;height:100%;object-fit:cover;">
-          <span class="tag">Single</span>
+          <!-- IMPORTANTE: O cliente avisou que a capa1.jpeg é do single ASTRAL. 
+               Lembre-se de substituir o arquivo "capa1.jpeg" na pasta "images" 
+               pela capa oficial do álbum "Jardim Secreto" quando ele te enviar. -->
+          <img src="images/capa1.jpeg" alt="Capa do Álbum Jardim Secreto" style="width:100%;height:100%;object-fit:cover;">
+          <span class="tag">Álbum</span>
         </div>
         <div class="release-body">
-          <h3>Vilão</h3>
-          <div class="meta">2:24 · Rap</div>
-          <div class="spotify-embed">
-            <iframe src="https://open.spotify.com/embed/track/4LULNISHSn5rlgXajsSsES?utm_source=generator&theme=0"
-              width="100%" height="152" frameborder="0"
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          <h3>Jardim Secreto</h3>
+          <div class="meta">Álbum · Rap</div>
+          
+          <!-- Lista de Players Compactos (Tracklist) -->
+          <div class="ep-tracklist">
+            <!-- Faixa 1: Lazzzy -->
+            <iframe src="https://open.spotify.com/embed/track/6l8cGP2ujqTomCPsrOyrRT?utm_source=generator&theme=0" 
+              height="80" frameborder="0" 
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+              loading="lazy" title="Player Spotify — Lazzzy"></iframe>
+              
+            <!-- Faixa 2: Magia natural -->
+            <iframe src="https://open.spotify.com/embed/track/0OYjOCb8Ss6lJjcs3wGJwz?utm_source=generator&theme=0" 
+              height="80" frameborder="0" 
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+              loading="lazy" title="Player Spotify — Magia natural"></iframe>
+              
+            <!-- Faixa 3: Amnésia -->
+            <iframe src="https://open.spotify.com/embed/track/3nGuCJVHSipGMTu9SyCAMk?utm_source=generator&theme=0" 
+              height="80" frameborder="0" 
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+              loading="lazy" title="Player Spotify — Amnésia"></iframe>
+              
+            <!-- Faixa 4: Jardim Secreto -->
+            <iframe src="https://open.spotify.com/embed/track/3ahknYWAqYFkeeloFo2jBW?utm_source=generator&theme=0" 
+              height="80" frameborder="0" 
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+              loading="lazy" title="Player Spotify — Jardim Secreto"></iframe>
+
+            <!-- Faixa 5: Vilão -->
+            <iframe src="https://open.spotify.com/embed/track/4LULNISHSn5rlgXajsSsES?utm_source=generator&theme=0" 
+              height="80" frameborder="0" 
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
               loading="lazy" title="Player Spotify — Vilão"></iframe>
           </div>
         </div>
       </article>
 
-      <!-- Card 2: Single -->
+      <!-- Card 2: Single EMB -->
       <article class="release-card">
         <div class="cover">
           <img src="images/capa2.jpeg" alt="Capa de EMB" style="width:100%;height:100%;object-fit:cover;">
@@ -485,21 +516,17 @@
           <h3>no Tédio Troco a Wave</h3>
           <div class="meta">EP · Rap</div>
           
-          <!-- Lista de Players Compactos (Tracklist) -->
           <div class="ep-tracklist">
-            <!-- Faixa 1: Tédio -->
             <iframe src="https://open.spotify.com/embed/track/2Z7TM2atyxFvG00UDmgEAF?utm_source=generator&theme=0" 
               height="80" frameborder="0" 
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
               loading="lazy" title="Player Spotify — Tédio"></iframe>
               
-            <!-- Faixa 2: Troco -->
             <iframe src="https://open.spotify.com/embed/track/54JspSdDFIYxvhplTkHUon?utm_source=generator&theme=0" 
               height="80" frameborder="0" 
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
               loading="lazy" title="Player Spotify — Troco"></iframe>
               
-            <!-- Faixa 3: Wave -->
             <iframe src="https://open.spotify.com/embed/track/0D4cZDz6xjIHaMimfCfavH?utm_source=generator&theme=0" 
               height="80" frameborder="0" 
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
@@ -519,7 +546,7 @@
         <h2 style="font-size:clamp(30px,4vw,44px); margin-bottom:16px;">Fale com HAZE</h2>
         <p>Pra parceria, shows, imprensa ou só pra mandar um salve — os contatos diretos estão abaixo.</p>
         <div class="contact-actions">
-          <a href="mailto:contatohzemusic@gmail.com" class="btn btn-primary" onclick="trackEvent('Clique_Email', 'Sessao_Contato')">Enviar e-mail</a>
+          <a href="mailto:contatohzemusic@gmail.com" target="_blank" rel="noopener" class="btn btn-primary" onclick="trackEvent('Clique_Email', 'Sessao_Contato')">Enviar e-mail</a>
           <a href="https://wa.me/554792372647" target="_blank" rel="noopener" class="btn btn-ghost" onclick="trackEvent('Clique_WhatsApp', 'Sessao_Contato')">Chamar no WhatsApp</a>
         </div>
       </div>
@@ -561,7 +588,7 @@
       <div class="footer-col">
         <h4>Contato</h4>
         <ul>
-          <li><a href="mailto:contatohzemusic@gmail.com"" onclick="trackEvent('Clique_Email', 'Footer')">contatohzemusic@gmail.com</a></li>
+          <li><a href="mailto:contatohzemusic@gmail.com" target="_blank" rel="noopener" onclick="trackEvent('Clique_Email', 'Footer')">contatohzemusic@gmail.com</a></li>
           <li><a href="https://wa.me/554792372647" target="_blank" rel="noopener" onclick="trackEvent('Clique_WhatsApp', 'Footer')">WhatsApp</a></li>
         </ul>
       </div>
