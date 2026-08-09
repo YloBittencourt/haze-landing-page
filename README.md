@@ -4,7 +4,7 @@
 ![Version](https://img.shields.io/badge/Version-1.0.0-blue?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-MIT-lightgrey?style=for-the-badge)
 
-> **🔗 Live Preview:** [Acesse o site oficial aqui](https://haze-landing-page.vercel.app/)
+> **🔗 Live Preview:** [Acesse o site oficial aqui](https://eohze.com/)
 
 Uma landing page premium, de alta performance e focada em conversão (CRO), desenvolvida para consolidar a presença digital do rapper HAZE. O projeto foi arquitetado para atuar como um *Hub Digital*, direcionando fãs para plataformas de streaming (Spotify/YouTube) e captando leads B2B (contratantes) de forma profissional.
 
