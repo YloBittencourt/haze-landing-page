@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>HAZE | Novo Single CANGAÇO</title>
 <meta name="description" content="HAZE. Novo single 'CANGAÇO' disponível no Spotify. Ouça as faixas nas plataformas de streaming, acompanhe o trabalho e entre em contato. Página oficial do artista.">
+<link rel="canonical" href="https://www.eohze.com/">
 
 <!--
   Open Graph / prévia de compartilhamento (WhatsApp, Instagram, Facebook, Twitter/X).
@@ -12,15 +13,15 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="HAZE | Novo Single CANGAÇO">
 <meta property="og:description" content="Rapper de Ilhéus, Bahia. Ouça o novo single CANGAÇO e os lançamentos oficiais nas plataformas de streaming.">
-<meta property="og:image" content="https://eohze.com/og-image.jpg">
+<meta property="og:image" content="https://www.eohze.com/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:url" content="https://eohze.com">
+<meta property="og:url" content="https://www.eohze.com/">
 <meta property="og:locale" content="pt_BR">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="HAZE | Novo Single CANGAÇO">
 <meta name="twitter:description" content="Rapper de Ilhéus, Bahia. Ouça o novo single CANGAÇO e os lançamentos oficiais nas plataformas de streaming.">
-<meta name="twitter:image" content="https://eohze.com/og-image.jpg">
+<meta name="twitter:image" content="https://www.eohze.com/og-image.jpg">
 
 <!-- Schema.org JSON-LD (Rich Results / Google Knowledge Graph) -->
 <script type="application/ld+json">
@@ -35,8 +36,8 @@
     "@type": "Place",
     "name": "Ilhéus, Bahia, Brasil"
   },
-  "url": "https://eohze.com",
-  "image": "https://eohze.com/og-image.jpg",
+  "url": "https://www.eohze.com/",
+  "image": "https://www.eohze.com/og-image.jpg",
   "sameAs": [
     "https://open.spotify.com/intl-pt/artist/3JrwKwtavEBVk3xdW2Rr6j",
     "https://www.instagram.com/eohze",
@@ -494,6 +495,7 @@
     background:linear-gradient(160deg, var(--mist-2), var(--bg-panel) 60%);
     border:1px solid var(--line);
   }
+  .about-photo picture{display:block; width:100%; height:100%;}
   .about-text p{color:var(--ink-dim); font-size:16px; margin-bottom:18px;}
   .about-text p:first-child{color:var(--ink); font-size:19px; font-weight:500;}
   .about-meta{display:flex; gap:32px; margin-top:32px; padding-top:28px; border-top:1px solid var(--line);}
@@ -508,7 +510,8 @@
   }
   .release-card:hover{transform:translateY(-6px); border-color:rgba(255,255,255,0.3);}
   .release-card:hover .cover img { transform: scale(1.08); transition: transform 0.6s ease; }
-  .cover img { transition: transform 0.6s ease; }
+  .cover picture { display:block; width:100%; height:100%; }
+  .cover img { transition: transform 0.6s ease; width:100%; height:100%; object-fit:cover; display:block; }
 
   .cover{
     aspect-ratio:1/1; position:relative; overflow:hidden;
@@ -580,6 +583,11 @@
     position:absolute;
     top:0; left:0; width:100%; height:100%;
     border:none;
+  }
+  .video-wrapper picture{
+    position:absolute;
+    top:0; left:0; width:100%; height:100%;
+    display:block;
   }
   .facade-thumb{
     position:absolute;
@@ -731,10 +739,12 @@
     background:var(--bg-panel-2);
     box-shadow:0 14px 36px rgba(0,0,0,0.65);
   }
+  .featured-cover-wrapper picture{display:block; width:100%; height:100%;}
   .featured-cover-wrapper img{
     width:100%;
     height:100%;
     object-fit:cover;
+    display:block;
     transition:transform .6s ease;
   }
   .featured-cover-wrapper:hover img{
@@ -1009,7 +1019,10 @@
   <div class="container">
     <div class="about-grid reveal">
       <div class="about-photo">
-        <img src="images/italo.png" alt="HAZE" style="width:100%;height:100%;object-fit:cover;">
+        <picture>
+          <source srcset="images/italo.webp" type="image/webp">
+          <img src="images/italo.png" alt="HAZE - Rapper de Ilhéus, Bahia" width="470" height="508" loading="lazy" style="width:100%;height:100%;object-fit:cover;">
+        </picture>
       </div>
       <div class="about-text">
         <div class="eyebrow">Sobre</div>
@@ -1036,7 +1049,10 @@
     <!-- Destaque Principal: Novo Single CANGAÇO -->
     <article class="featured-release reveal" id="destaque-cangaco">
       <div class="featured-cover-wrapper">
-        <img src="images/cangaco.jpeg" alt="Capa oficial do single CANGAÇO - HAZE" loading="lazy">
+        <picture>
+          <source srcset="images/cangaco.webp" type="image/webp">
+          <img src="images/cangaco.jpeg" alt="Capa oficial do single CANGAÇO - HAZE" width="640" height="640" loading="lazy">
+        </picture>
         <span class="featured-badge">
           <span class="badge-pulse"></span>
           Novo Single
@@ -1079,7 +1095,10 @@
       <!-- Card: Horus (2026) -->
       <article class="release-card">
         <div class="cover">
-          <img src="images/horus.png" alt="Capa de Horus" style="width:100%;height:100%;object-fit:cover;">
+          <picture>
+            <source srcset="images/horus.webp" type="image/webp">
+            <img src="images/horus.png" alt="Capa de Horus" width="397" height="396" loading="lazy">
+          </picture>
           <span class="tag">Single</span>
         </div>
         <div class="release-body">
@@ -1097,7 +1116,10 @@
       <!-- Card: EMB (2026) -->
       <article class="release-card">
         <div class="cover">
-          <img src="images/capa2.jpeg" alt="Capa de EMB" style="width:100%;height:100%;object-fit:cover;">
+          <picture>
+            <source srcset="images/capa2.webp" type="image/webp">
+            <img src="images/capa2.jpeg" alt="Capa de EMB" width="1179" height="1168" loading="lazy">
+          </picture>
           <span class="tag">Single</span>
         </div>
         <div class="release-body">
@@ -1115,7 +1137,10 @@
       <!-- Card: EP No Tédio Troco a Wave (2025) -->
       <article class="release-card">
         <div class="cover">
-          <img src="images/capa3.jpeg" alt="Capa de no Tédio Troco a Wave" style="width:100%;height:100%;object-fit:cover;">
+          <picture>
+            <source srcset="images/capa3.webp" type="image/webp">
+            <img src="images/capa3.jpeg" alt="Capa de no Tédio Troco a Wave" width="1179" height="1172" loading="lazy">
+          </picture>
           <span class="tag">EP</span>
         </div>
         <div class="release-body">
@@ -1133,7 +1158,10 @@
       <!-- Card: Astral (2025) -->
       <article class="release-card">
         <div class="cover">
-          <img src="images/capa1.jpeg" alt="Capa de Astral" style="width:100%;height:100%;object-fit:cover;">
+          <picture>
+            <source srcset="images/capa1.webp" type="image/webp">
+            <img src="images/capa1.jpeg" alt="Capa de Astral" width="1179" height="1168" loading="lazy">
+          </picture>
           <span class="tag">Single</span>
         </div>
         <div class="release-body">
@@ -1151,7 +1179,10 @@
       <!-- Card: EP Jardim Secreto (2025) -->
       <article class="release-card">
         <div class="cover">
-          <img src="images/capa4.jpeg" alt="Capa do EP Jardim Secreto" style="width:100%;height:100%;object-fit:cover;">
+          <picture>
+            <source srcset="images/capa4.webp" type="image/webp">
+            <img src="images/capa4.jpeg" alt="Capa do EP Jardim Secreto" width="1280" height="902" loading="lazy">
+          </picture>
           <span class="tag">EP</span>
         </div>
         <div class="release-body">
@@ -1169,7 +1200,10 @@
       <!-- Card: Honey (2022) -->
       <article class="release-card">
         <div class="cover">
-          <img src="images/capa5.jpeg" alt="Capa de Honey" style="width:100%;height:100%;object-fit:cover;">
+          <picture>
+            <source srcset="images/capa5.webp" type="image/webp">
+            <img src="images/capa5.jpeg" alt="Capa de Honey" width="1179" height="1459" loading="lazy">
+          </picture>
           <span class="tag">Single</span>
         </div>
         <div class="release-body">
@@ -1200,7 +1234,10 @@
       <!-- Clipe 1: Jardim Secreto -->
       <article class="video-card">
         <div class="video-wrapper video-facade" data-video-id="pYCiMeePOWQ" data-video-title="Videoclipe Oficial — Haze - Jardim Secreto" onclick="playVideo(this)">
-          <img src="images/yt-jardim-secreto.jpg" alt="Capa do clipe Jardim Secreto - HAZE" class="facade-thumb" loading="lazy">
+          <picture>
+            <source srcset="images/yt-jardim-secreto.webp" type="image/webp">
+            <img src="images/yt-jardim-secreto.jpg" alt="Capa do clipe Jardim Secreto - HAZE" class="facade-thumb" width="480" height="360" loading="lazy">
+          </picture>
           <div class="facade-overlay">
             <button type="button" class="play-btn" aria-label="Reproduzir videoclipe Jardim Secreto">
               <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
@@ -1224,7 +1261,10 @@
       <!-- Clipe 2: Vilão -->
       <article class="video-card">
         <div class="video-wrapper video-facade" data-video-id="noEaPbRo-TI" data-video-title="Visualizer Oficial — Haze - Vilão ft Yunk Du, Nvp Shit!" onclick="playVideo(this)">
-          <img src="images/yt-vilao.jpg" alt="Capa do clipe Vilão - HAZE" class="facade-thumb" loading="lazy">
+          <picture>
+            <source srcset="images/yt-vilao.webp" type="image/webp">
+            <img src="images/yt-vilao.jpg" alt="Capa do clipe Vilão - HAZE" class="facade-thumb" width="480" height="360" loading="lazy">
+          </picture>
           <div class="facade-overlay">
             <button type="button" class="play-btn" aria-label="Reproduzir clipe Vilão">
               <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>

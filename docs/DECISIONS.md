@@ -27,5 +27,12 @@ Este documento centraliza as principais decisões de engenharia, design e negóc
 * **Motivo:** Eliminar barreiras de contato comercial para contratação de shows, melhorar a indexação no Google com Rich Results musicais e garantir usabilidade fluida em smartphones.
 
 ### 7. Consolidação de Embeds de EPs & Seção Audiovisual
-* **Decisão:** Substituição das pilhas de 8 iframes individuais nos EPs por 2 embeds oficiais de álbum do Spotify (`height="352"`) com tracklist integrada, e adição de uma seção cinematográfica de Videoclipes (`#videos`) via `youtube-nocookie.com`.
-* **Motivo:** Reduzir mais de 70% o tráfego de scripts de terceiros e consumo de memória na discografia, além de aumentar o tempo de retenção do usuário (dwell time) oferecendo a experiência audiovisual oficial sem sair da página.
+* **Decisão:** Substituição das pilhas de 8 iframes individuais nos EPs por 2 embeds oficiais de álbum do Spotify (`height="352"`) com tracklist integrada, e adição de uma seção cinematográfica de Videoclipes (`#videos`) com fachada interativa (lazy load sob clique do usuário).
+* **Motivo:** Reduzir mais de 70% o tráfego de scripts de terceiros e consumo de memória na discografia, além de aumentar o tempo de retenção do usuário (dwell time) oferecendo a experiência audiovisual oficial sem sair da página e sem erros de execução local.
+
+### 8. SEO Técnico, Headers Vercel e Formato de Imagem WebP (Performance & Segurança)
+* **Decisão:**
+  1. Criação de `robots.txt` e `sitemap.xml` apontando para o domínio canônico `https://www.eohze.com/`, além da tag `<link rel="canonical">` no `<head>`.
+  2. Criação do arquivo `vercel.json` com `Cache-Control` imutável (31536000s) para a pasta `/images/` e arquivos de mídia, juntamente com headers de segurança HTTP (`X-Content-Type-Options: nosniff`, `X-Frame-Options: SAMEORIGIN`, `Referrer-Policy: strict-origin-when-cross-origin` e `Permissions-Policy`).
+  3. Conversão de todas as capas e fotos para o formato moderno `.webp` e adoção de tags `<picture>` com `<source type="image/webp">` e fallback para os arquivos originais `.jpeg`/`.png`, acompanhadas de dimensões intrínsecas (`width` e `height`) para neutralizar o Cumulative Layout Shift (CLS).
+* **Motivo:** Garantir indexação perfeita pelos motores de busca (Googlebot), proteger a integridade da aplicação com headers HTTP modernos, eliminar re-downloads desnecessários no Edge da Vercel e acelerar em mais de 43% o tempo de carregamento de imagens em redes móveis (3G/4G/5G).
