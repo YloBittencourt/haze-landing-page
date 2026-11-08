@@ -20,3 +20,13 @@ O design foi concebido com uma estética de "Produto Digital Premium", mesclando
 
 ## 5. Scroll Reveal System
 * **Comportamento:** Elementos com a classe `.reveal` iniciam invisíveis (`opacity: 0`) e deslocados. A API nativa do navegador `IntersectionObserver` detecta a entrada na viewport e injeta a classe `.in`, criando um efeito de cascata elegante sem dependência de bibliotecas externas pesadas.
+
+## 6. Menu Mobile Drawer (`.mobile-menu-overlay`)
+* **Estrutura:** Botão `.menu-toggle` com ícone hambúrguer animado (transição para X) e container `.mobile-menu-overlay` com *backdrop-filter* pesado.
+* **Comportamento:** Ao abrir, bloqueia a rolagem do body (`overflow: hidden`), exibe numeração ordinal para cada link e fecha automaticamente ao clicar em qualquer item ou pressionar a tecla `Escape`.
+
+## 7. Floating Action: Voltar ao Topo (`.back-to-top`)
+* **Comportamento:** Permanece oculto até o scroll ultrapassar 400px. Ao atingir o limiar, surge com transição suave de opacidade e elevação no eixo Y, executando rolagem suave (`window.scrollTo({top:0, behavior:'smooth'})`) ao ser clicado.
+
+## 8. Copiar E-mail Interativo (`copyEmail()`)
+* **Comportamento:** Utiliza a API moderna `navigator.clipboard` com *fallback* automático para `execCommand('copy')`. Atualiza o texto para "E-mail copiado!" e altera o ícone durante 2.5s antes de restaurar o estado padrão, registrando o evento no GA4.

@@ -21,3 +21,7 @@ Este documento centraliza as principais decisões de engenharia, design e negóc
 ### 5. Spotlight de Lançamento em Evidência (Single CANGAÇO)
 * **Decisão:** Criação do componente `.featured-release` em destaque no topo da discografia, acompanhado de pill badge interativa no Hero e CTA principal focado na faixa.
 * **Motivo:** Maximizar a taxa de reprodução (streams) do lançamento mais recente ("CANGAÇO"), oferecendo player embutido e links diretos para a música e o single/álbum completo no Spotify, mantendo a harmonia visual com o catálogo.
+
+### 6. Otimizações de Conversão (CRO), Mobile Navigation & Schema.org
+* **Decisão:** Inserção de mensagens pré-formatadas para WhatsApp, assunto customizado no mailto, botão de cópia de e-mail com feedback instantâneo, correção de Open Graph absoluto, inclusão de dados estruturados Schema.org JSON-LD (MusicGroup) e implementação de menu mobile drawer responsivo com botão flutuante "Voltar ao Topo".
+* **Motivo:** Eliminar barreiras de contato comercial para contratação de shows, melhorar a indexação no Google com Rich Results musicais e garantir usabilidade fluida em smartphones.
