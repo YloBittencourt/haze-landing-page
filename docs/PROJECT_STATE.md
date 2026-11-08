@@ -1,7 +1,7 @@
 # 🟢 Status do Projeto
 
-> **Versão Atual:** 1.2.0 (Production)
-> **Última Atualização:** Novembro de 2026 (CRO, Mobile Navigation, Schema.org e Lançamento de CANGAÇO)
+> **Versão Atual:** 1.3.0 (Production)
+> **Última Atualização:** Novembro de 2026 (Seção de Vídeos, Otimização dos EPs, CRO e Mobile Drawer)
 
 ## 🚀 Ambiente de Produção
 * **Status:** Online / Estável

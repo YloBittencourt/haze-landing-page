@@ -25,3 +25,7 @@ Este documento centraliza as principais decisões de engenharia, design e negóc
 ### 6. Otimizações de Conversão (CRO), Mobile Navigation & Schema.org
 * **Decisão:** Inserção de mensagens pré-formatadas para WhatsApp, assunto customizado no mailto, botão de cópia de e-mail com feedback instantâneo, correção de Open Graph absoluto, inclusão de dados estruturados Schema.org JSON-LD (MusicGroup) e implementação de menu mobile drawer responsivo com botão flutuante "Voltar ao Topo".
 * **Motivo:** Eliminar barreiras de contato comercial para contratação de shows, melhorar a indexação no Google com Rich Results musicais e garantir usabilidade fluida em smartphones.
+
+### 7. Consolidação de Embeds de EPs & Seção Audiovisual
+* **Decisão:** Substituição das pilhas de 8 iframes individuais nos EPs por 2 embeds oficiais de álbum do Spotify (`height="352"`) com tracklist integrada, e adição de uma seção cinematográfica de Videoclipes (`#videos`) via `youtube-nocookie.com`.
+* **Motivo:** Reduzir mais de 70% o tráfego de scripts de terceiros e consumo de memória na discografia, além de aumentar o tempo de retenção do usuário (dwell time) oferecendo a experiência audiovisual oficial sem sair da página.

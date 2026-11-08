@@ -30,3 +30,7 @@ O design foi concebido com uma estética de "Produto Digital Premium", mesclando
 
 ## 8. Copiar E-mail Interativo (`copyEmail()`)
 * **Comportamento:** Utiliza a API moderna `navigator.clipboard` com *fallback* automático para `execCommand('copy')`. Atualiza o texto para "E-mail copiado!" e altera o ícone durante 2.5s antes de restaurar o estado padrão, registrando o evento no GA4.
+
+## 9. Player Audiovisual Cinematográfico (`.video-card` / `#videos`)
+* **Estrutura:** Grid responsivo contendo `.video-wrapper` com aspect-ratio 16:9 (`padding-top: 56.25%`) e embeds oficiais via `youtube-nocookie.com`.
+* **Comportamento:** Carrega videoclipes com lazy loading nativo (`loading="lazy"`), mantendo a privacidade de dados (modo sem cookies) e garantindo reprodução em tela cheia com alta fidelidade sem pesar no tempo de carregamento inicial.
