@@ -17,3 +17,7 @@ Este documento centraliza as principais decisões de engenharia, design e negóc
 ### 4. Componentização Híbrida do Spotify
 * **Decisão:** Usar embeds completos (152px) para Singles e embeds compactos agrupados (80px) para EPs (`.ep-tracklist`).
 * **Motivo:** Evitar a poluição visual em projetos maiores (EPs), simulando a interface nativa de lista de reprodução do próprio aplicativo do Spotify.
+
+### 5. Spotlight de Lançamento em Evidência (Single CANGAÇO)
+* **Decisão:** Criação do componente `.featured-release` em destaque no topo da discografia, acompanhado de pill badge interativa no Hero e CTA principal focado na faixa.
+* **Motivo:** Maximizar a taxa de reprodução (streams) do lançamento mais recente ("CANGAÇO"), oferecendo player embutido e links diretos para a música e o single/álbum completo no Spotify, mantendo a harmonia visual com o catálogo.

@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HAZE</title>
-<meta name="description" content="HAZE. Ouça as faixas nas plataformas de streaming, acompanhe o trabalho e entre em contato. Página oficial do artista.">
+<title>HAZE | Novo Single CANGAÇO</title>
+<meta name="description" content="HAZE. Novo single 'CANGAÇO' disponível no Spotify. Ouça as faixas nas plataformas de streaming, acompanhe o trabalho e entre em contato. Página oficial do artista.">
 
 <!--
   Open Graph / prévia de compartilhamento (WhatsApp, Instagram, Facebook, Twitter/X).
@@ -179,13 +179,51 @@
   }
 
   .hero-inner{position:relative; z-index:2;}
+  .hero-badges{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:12px;
+    margin-bottom:26px;
+  }
   .tag-stamp{
     display:inline-flex; align-items:center; gap:8px;
     border:1px solid var(--line); border-radius:999px;
-    padding:6px 14px 6px 6px; margin-bottom:26px;
+    padding:6px 14px 6px 6px;
   }
   .tag-stamp .dot{width:8px; height:8px; border-radius:50%; background:var(--accent);}
   .tag-stamp span{font-family:var(--mono); font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:var(--ink-dim);}
+
+  .release-badge{
+    display:inline-flex; align-items:center; gap:8px;
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.2);
+    border-radius:999px;
+    padding:6px 14px 6px 10px;
+    font-family:var(--mono); font-size:11px; letter-spacing:0.08em; text-transform:uppercase;
+    color:var(--ink);
+    transition:background .25s ease, border-color .25s ease, transform .25s ease, box-shadow .25s ease;
+  }
+  .release-badge:hover{
+    background:rgba(255,255,255,0.12);
+    border-color:var(--accent);
+    transform:translateY(-2px);
+    box-shadow:0 6px 20px -4px rgba(255,255,255,0.15);
+  }
+  .badge-pulse{
+    width:8px; height:8px; border-radius:50%;
+    background:#1DB954;
+    box-shadow:0 0 0 0 rgba(29, 185, 84, 0.7);
+    animation:pulseDot 2s infinite;
+  }
+  @keyframes pulseDot{
+    0%{box-shadow:0 0 0 0 rgba(29, 185, 84, 0.7);}
+    70%{box-shadow:0 0 0 7px rgba(29, 185, 84, 0);}
+    100%{box-shadow:0 0 0 0 rgba(29, 185, 84, 0);}
+  }
+  .release-badge strong{color:var(--accent); font-weight:700;}
+  .release-badge .badge-arrow{transition:transform .2s ease;}
+  .release-badge:hover .badge-arrow{transform:translateX(3px);}
 
   .hero-title{
     font-size:clamp(72px, 15vw, 190px);
@@ -280,6 +318,132 @@
   .icon-link:hover{border-color:var(--accent); background:rgba(255,255,255,0.08);}
   .icon-link svg{width:15px; height:15px; fill:var(--ink-dim);}
 
+  /* ========================================== */
+  /* SINGLE EM DESTAQUE (CANGAÇO)               */
+  /* ========================================== */
+  .featured-release{
+    background:linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(21,21,22,0.96) 100%), var(--bg-panel);
+    border:1px solid rgba(255,255,255,0.22);
+    border-radius:12px;
+    padding:clamp(24px, 4vw, 40px);
+    margin-bottom:64px;
+    display:grid;
+    grid-template-columns:320px 1fr;
+    gap:40px;
+    align-items:center;
+    position:relative;
+    overflow:hidden;
+    box-shadow:0 24px 60px -20px rgba(0,0,0,0.85);
+    transition:border-color .3s ease, box-shadow .3s ease;
+  }
+  .featured-release:hover{
+    border-color:rgba(255,255,255,0.36);
+    box-shadow:0 30px 70px -15px rgba(255,255,255,0.08);
+  }
+  .featured-release::before{
+    content:"";
+    position:absolute;
+    top:-50%; right:-20%; width:420px; height:420px;
+    background:radial-gradient(circle, rgba(255,255,255,0.09) 0%, transparent 70%);
+    pointer-events:none;
+  }
+  .featured-cover-wrapper{
+    position:relative;
+    border-radius:8px;
+    overflow:hidden;
+    aspect-ratio:1/1;
+    border:1px solid rgba(255,255,255,0.2);
+    background:var(--bg-panel-2);
+    box-shadow:0 14px 36px rgba(0,0,0,0.65);
+  }
+  .featured-cover-wrapper img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:transform .6s ease;
+  }
+  .featured-cover-wrapper:hover img{
+    transform:scale(1.06);
+  }
+  .featured-badge{
+    position:absolute;
+    top:14px;
+    left:14px;
+    z-index:2;
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    background:rgba(11,11,12,0.85);
+    backdrop-filter:blur(8px);
+    border:1px solid rgba(255,255,255,0.25);
+    border-radius:999px;
+    padding:5px 12px;
+    font-family:var(--mono);
+    font-size:10.5px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--ink);
+  }
+  .featured-info{
+    position:relative;
+    z-index:2;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+  .featured-eyebrow{
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--ink-dim);
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    margin-bottom:8px;
+  }
+  .featured-eyebrow::before{
+    content:"";
+    width:14px;
+    height:1px;
+    background:var(--accent);
+  }
+  .featured-title{
+    font-family:var(--disp);
+    font-size:clamp(48px, 6vw, 76px);
+    line-height:0.95;
+    letter-spacing:0.02em;
+    margin-bottom:8px;
+    color:var(--accent);
+  }
+  .featured-meta{
+    font-family:var(--mono);
+    font-size:12.5px;
+    color:var(--ink-mute);
+    margin-bottom:14px;
+  }
+  .featured-desc{
+    font-size:15px;
+    color:var(--ink-dim);
+    line-height:1.6;
+    margin-bottom:20px;
+    max-width:54ch;
+  }
+  .featured-player{
+    margin-bottom:20px;
+  }
+  .featured-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+  }
+  .catalog-divider{
+    margin-bottom:32px;
+  }
+  .catalog-divider h3{
+    font-size:clamp(28px, 3.5vw, 40px);
+  }
+
   .contact{background:var(--bg-panel); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
   .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center;}
   .contact-text p{color:var(--ink-dim); margin-bottom:28px; font-size:16px; max-width:44ch;}
@@ -347,6 +511,8 @@
 
   @media (max-width:980px){
     .about-grid{grid-template-columns:1fr;}
+    .featured-release{grid-template-columns:1fr; gap:28px; padding:28px;}
+    .featured-cover-wrapper{max-width:320px; margin:0 auto; width:100%;}
     .releases{grid-template-columns:repeat(2,1fr);}
     .contact-grid{grid-template-columns:1fr; gap:36px;}
     .footer-grid{grid-template-columns:1fr 1fr;}
@@ -385,7 +551,7 @@
       <li><a href="#contato">Contato</a></li>
     </ul>
   </nav>
-  <a href="https://open.spotify.com/intl-pt/artist/3JrwKwtavEBVk3xdW2Rr6j?si=S88KHNIlQ_W5AkiWrwFLew" target="_blank" rel="noopener" class="btn btn-primary btn-sm" onclick="trackEvent('Clique_Spotify', 'Header')">Ouvir agora</a>
+  <a href="https://open.spotify.com/intl-pt/track/0fG8kamIssRM0wfSJqgUS9" target="_blank" rel="noopener" class="btn btn-primary btn-sm" onclick="trackEvent('Clique_Spotify', 'Header')">Ouvir agora</a>
 </header>
 
 <section class="hero" id="ouvir">
@@ -397,11 +563,21 @@
   <div class="grain" aria-hidden="true"></div>
 
   <div class="container hero-inner">
-    <div class="tag-stamp"><span class="dot"></span><span>Artista / Rapper · Ilhéus, Bahia</span></div>
+    <div class="hero-badges">
+      <div class="tag-stamp"><span class="dot"></span><span>Artista / Rapper · Ilhéus, Bahia</span></div>
+      <a href="#destaque-cangaco" class="release-badge" onclick="trackEvent('Clique_Spotify', 'Hero_Badge_Cangaco')">
+        <span class="badge-pulse"></span>
+        <span>Novo Single · <strong>CANGAÇO</strong></span>
+        <svg class="badge-arrow" viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 12l4-4-4-4"/></svg>
+      </a>
+    </div>
     <h1 class="hero-title">HAZE</h1>
     <p class="hero-sub">Rima direta, produção pesada. Ouça as faixas, acompanhe o trabalho e fale direto com o artista.</p>
     <div class="hero-ctas">
-      <a href="https://open.spotify.com/intl-pt/artist/3JrwKwtavEBVk3xdW2Rr6j?si=L07IgY23QHGmdwZPPukrWA" target="_blank" rel="noopener" class="btn btn-primary" onclick="trackEvent('Clique_Spotify', 'Hero')">Ouvir no Spotify</a>
+      <a href="https://open.spotify.com/intl-pt/track/0fG8kamIssRM0wfSJqgUS9" target="_blank" rel="noopener" class="btn btn-primary" onclick="trackEvent('Clique_Spotify', 'Hero_Cangaco')">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink:0;"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm4.6 14.4a.6.6 0 01-.83.2c-2.3-1.4-5.2-1.7-8.6-.9a.6.6 0 11-.27-1.17c3.7-.85 6.9-.5 9.5 1.05.3.18.4.56.2.82zm1.2-2.7a.75.75 0 01-1.03.25c-2.6-1.6-6.6-2.07-9.7-1.13a.75.75 0 11-.44-1.44c3.55-1.08 7.95-.55 11 1.3.36.22.47.68.17 1.02zm.1-2.8C14.9 9 8.9 8.8 5.7 9.8a.9.9 0 11-.5-1.72c3.7-1.13 10.3-.9 14.4 1.5a.9.9 0 01-.9 1.56z"/></svg>
+        Ouvir "CANGAÇO"
+      </a>
       <a href="https://www.youtube.com/@%C3%A9ohaze" target="_blank" rel="noopener" class="btn btn-ghost" onclick="trackEvent('Clique_YouTube', 'Hero')">Assistir no YouTube</a>
     </div>
   </div>
@@ -434,50 +610,106 @@
     <div class="sec-head reveal">
       <div class="eyebrow">Discografia</div>
       <h2>Ouça as faixas</h2>
-      <p>Dê o play direto aqui ou abra na plataforma.</p>
+      <p>Dê o play no novo single ou navegue pelo catálogo completo de HAZE.</p>
+    </div>
+
+    <!-- Destaque Principal: Novo Single CANGAÇO -->
+    <article class="featured-release reveal" id="destaque-cangaco">
+      <div class="featured-cover-wrapper">
+        <img src="images/cangaco.jpeg" alt="Capa oficial do single CANGAÇO - HAZE" loading="lazy">
+        <span class="featured-badge">
+          <span class="badge-pulse"></span>
+          Novo Single
+        </span>
+      </div>
+      <div class="featured-info">
+        <div class="featured-eyebrow">Lançamento em Destaque</div>
+        <h3 class="featured-title">CANGAÇO</h3>
+        <div class="featured-meta">Single Oficial · 2026 · HAZE</div>
+        <p class="featured-desc">
+          O novo single de HAZE traz uma sonoridade visceral com rimas diretas e produção pesada, marcando uma nova fase na carreira do artista. Ouça agora em primeira mão.
+        </p>
+
+        <div class="spotify-embed featured-player">
+          <iframe src="https://open.spotify.com/embed/track/0fG8kamIssRM0wfSJqgUS9?utm_source=generator&theme=0"
+            width="100%" height="152" frameborder="0"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy" title="Player Spotify — CANGAÇO"></iframe>
+        </div>
+
+        <div class="featured-actions">
+          <a href="https://open.spotify.com/intl-pt/track/0fG8kamIssRM0wfSJqgUS9" target="_blank" rel="noopener" class="btn btn-primary btn-sm" onclick="trackEvent('Clique_Spotify', 'Destaque_Cangaco_Faixa')">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm4.6 14.4a.6.6 0 01-.83.2c-2.3-1.4-5.2-1.7-8.6-.9a.6.6 0 11-.27-1.17c3.7-.85 6.9-.5 9.5 1.05.3.18.4.56.2.82zm1.2-2.7a.75.75 0 01-1.03.25c-2.6-1.6-6.6-2.07-9.7-1.13a.75.75 0 11-.44-1.44c3.55-1.08 7.95-.55 11 1.3.36.22.47.68.17 1.02zm.1-2.8C14.9 9 8.9 8.8 5.7 9.8a.9.9 0 11-.5-1.72c3.7-1.13 10.3-.9 14.4 1.5a.9.9 0 01-.9 1.56z"/></svg>
+            Ouvir Música no Spotify
+          </a>
+          <a href="https://open.spotify.com/album/3tXuyCl3q5bYbDs9rzKPJy" target="_blank" rel="noopener" class="btn btn-ghost btn-sm" onclick="trackEvent('Clique_Spotify', 'Destaque_Cangaco_Album')">
+            Ver Single Completo
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <div class="catalog-divider reveal">
+      <div class="eyebrow">Catálogo</div>
+      <h3>Outros Lançamentos</h3>
     </div>
 
     <div class="releases reveal">
       
-      <!-- Card 1: Honey (2022) -->
+      <!-- Card: Horus (2026) -->
       <article class="release-card">
         <div class="cover">
-          <img src="images/capa5.jpeg" alt="Capa de Honey" style="width:100%;height:100%;object-fit:cover;">
+          <img src="images/horus.png" alt="Capa de Horus" style="width:100%;height:100%;object-fit:cover;">
           <span class="tag">Single</span>
         </div>
         <div class="release-body">
-          <h3>Honey</h3>
-          <div class="meta">Single · 2022</div>
+          <h3>Horus</h3>
+          <div class="meta">Single · 2026</div>
           <div class="spotify-embed">
-            <iframe src="https://open.spotify.com/embed/track/4eeIp4qjhF1vTZkSmg9q9q?utm_source=generator&theme=0"
+            <iframe src="https://open.spotify.com/embed/track/5FhByyr8FdYTjb9x8BCxHp?utm_source=generator&theme=0"
               width="100%" height="152" frameborder="0"
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-              loading="lazy" title="Player Spotify — Honey"></iframe>
+              loading="lazy" title="Player Spotify — Horus"></iframe>
           </div>
         </div>
       </article>
 
-      <!-- Card 2: EP Jardim Secreto (2025) -->
+      <!-- Card: EMB (2026) -->
       <article class="release-card">
         <div class="cover">
-          <!-- Certifique-se de que a capa1.jpeg é a arte oficial do Jardim Secreto -->
-          <img src="images/capa4.jpeg" alt="Capa do EP Jardim Secreto" style="width:100%;height:100%;object-fit:cover;">
+          <img src="images/capa2.jpeg" alt="Capa de EMB" style="width:100%;height:100%;object-fit:cover;">
+          <span class="tag">Single</span>
+        </div>
+        <div class="release-body">
+          <h3>EMB</h3>
+          <div class="meta">Single · 2026</div>
+          <div class="spotify-embed">
+            <iframe src="https://open.spotify.com/embed/track/6KzAEvvZqFcUnxtVyjLVAU?utm_source=generator&theme=0"
+              width="100%" height="152" frameborder="0"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy" title="Player Spotify — EMB"></iframe>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card: EP No Tédio Troco a Wave (2025) -->
+      <article class="release-card">
+        <div class="cover">
+          <img src="images/capa3.jpeg" alt="Capa de no Tédio Troco a Wave" style="width:100%;height:100%;object-fit:cover;">
           <span class="tag">EP</span>
         </div>
         <div class="release-body">
-          <h3>Jardim Secreto</h3>
+          <h3>no Tédio Troco a Wave</h3>
           <div class="meta">EP · 2025</div>
           <div class="ep-tracklist">
-            <iframe src="https://open.spotify.com/embed/track/6l8cGP2ujqTomCPsrOyrRT?utm_source=generator&theme=0" height="80" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Player Spotify — Lazzzy"></iframe>
-            <iframe src="https://open.spotify.com/embed/track/0OYjOCb8Ss6lJjcs3wGJwz?utm_source=generator&theme=0" height="80" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Player Spotify — Magia natural"></iframe>
-            <iframe src="https://open.spotify.com/embed/track/3nGuCJVHSipGMTu9SyCAMk?utm_source=generator&theme=0" height="80" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Player Spotify — Amnésia"></iframe>
-            <iframe src="https://open.spotify.com/embed/track/3ahknYWAqYFkeeloFo2jBW?utm_source=generator&theme=0" height="80" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Player Spotify — Jardim Secreto"></iframe>
-            <iframe src="https://open.spotify.com/embed/track/4LULNISHSn5rlgXajsSsES?utm_source=generator&theme=0" height="80" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Player Spotify — Vilão"></iframe>
+            <iframe src="https://open.spotify.com/embed/track/2Z7TM2atyxFvG00UDmgEAF?utm_source=generator&theme=0" height="80" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Player Spotify — Tédio"></iframe>
+            <iframe src="https://open.spotify.com/embed/track/54JspSdDFIYxvhplTkHUon?utm_source=generator&theme=0" height="80" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Player Spotify — Troco"></iframe>
+            <iframe src="https://open.spotify.com/embed/track/0D4cZDz6xjIHaMimfCfavH?utm_source=generator&theme=0" height="80" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Player Spotify — Wave"></iframe>
           </div>
         </div>
       </article>
 
-      <!-- Card 3: Astral (2025) -->
+      <!-- Card: Astral (2025) -->
       <article class="release-card">
         <div class="cover">
           <img src="images/capa1.jpeg" alt="Capa de Astral" style="width:100%;height:100%;object-fit:cover;">
@@ -495,57 +727,39 @@
         </div>
       </article>
 
-      <!-- Card 4: EP No Tédio Troco a Wave (2025) -->
+      <!-- Card: EP Jardim Secreto (2025) -->
       <article class="release-card">
         <div class="cover">
-          <img src="images/capa3.jpeg" alt="Capa de no Tédio Troco a Wave" style="width:100%;height:100%;object-fit:cover;">
+          <img src="images/capa4.jpeg" alt="Capa do EP Jardim Secreto" style="width:100%;height:100%;object-fit:cover;">
           <span class="tag">EP</span>
         </div>
         <div class="release-body">
-          <h3>no Tédio Troco a Wave</h3>
+          <h3>Jardim Secreto</h3>
           <div class="meta">EP · 2025</div>
           <div class="ep-tracklist">
-            <iframe src="https://open.spotify.com/embed/track/2Z7TM2atyxFvG00UDmgEAF?utm_source=generator&theme=0" height="80" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Player Spotify — Tédio"></iframe>
-            <iframe src="https://open.spotify.com/embed/track/54JspSdDFIYxvhplTkHUon?utm_source=generator&theme=0" height="80" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Player Spotify — Troco"></iframe>
-            <iframe src="https://open.spotify.com/embed/track/0D4cZDz6xjIHaMimfCfavH?utm_source=generator&theme=0" height="80" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Player Spotify — Wave"></iframe>
+            <iframe src="https://open.spotify.com/embed/track/6l8cGP2ujqTomCPsrOyrRT?utm_source=generator&theme=0" height="80" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Player Spotify — Lazzzy"></iframe>
+            <iframe src="https://open.spotify.com/embed/track/0OYjOCb8Ss6lJjcs3wGJwz?utm_source=generator&theme=0" height="80" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Player Spotify — Magia natural"></iframe>
+            <iframe src="https://open.spotify.com/embed/track/3nGuCJVHSipGMTu9SyCAMk?utm_source=generator&theme=0" height="80" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Player Spotify — Amnésia"></iframe>
+            <iframe src="https://open.spotify.com/embed/track/3ahknYWAqYFkeeloFo2jBW?utm_source=generator&theme=0" height="80" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Player Spotify — Jardim Secreto"></iframe>
+            <iframe src="https://open.spotify.com/embed/track/4LULNISHSn5rlgXajsSsES?utm_source=generator&theme=0" height="80" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Player Spotify — Vilão"></iframe>
           </div>
         </div>
       </article>
 
-      <!-- Card 5: EMB (2026) -->
+      <!-- Card: Honey (2022) -->
       <article class="release-card">
         <div class="cover">
-          <!-- ATENÇÃO: Renomeie a imagem do EMB na sua pasta para capa4.jpeg -->
-          <img src="images/capa2.jpeg" alt="Capa de EMB" style="width:100%;height:100%;object-fit:cover;">
+          <img src="images/capa5.jpeg" alt="Capa de Honey" style="width:100%;height:100%;object-fit:cover;">
           <span class="tag">Single</span>
         </div>
         <div class="release-body">
-          <h3>EMB</h3>
-          <div class="meta">Single · 2026</div>
+          <h3>Honey</h3>
+          <div class="meta">Single · 2022</div>
           <div class="spotify-embed">
-            <iframe src="https://open.spotify.com/embed/track/6KzAEvvZqFcUnxtVyjLVAU?utm_source=generator&theme=0"
+            <iframe src="https://open.spotify.com/embed/track/4eeIp4qjhF1vTZkSmg9q9q?utm_source=generator&theme=0"
               width="100%" height="152" frameborder="0"
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-              loading="lazy" title="Player Spotify — EMB"></iframe>
-          </div>
-        </div>
-      </article>
-
-
-      <!-- Card 1: Honey (2022) -->
-      <article class="release-card">
-        <div class="cover">
-          <img src="images/horus.png" alt="Capa de HOrus" style="width:100%;height:100%;object-fit:cover;">
-          <span class="tag">Single</span>
-        </div>
-        <div class="release-body">
-          <h3>Horus</h3>
-          <div class="meta">Single · 2026</div>
-          <div class="spotify-embed">
-            <iframe src="https://open.spotify.com/embed/track/5FhByyr8FdYTjb9x8BCxHp?utm_source=generator&theme=0"
-              width="100%" height="152" frameborder="0"
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-              loading="lazy" title="Player Spotify — Horus"></iframe>
+              loading="lazy" title="Player Spotify — Honey"></iframe>
           </div>
         </div>
       </article>

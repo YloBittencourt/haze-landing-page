@@ -1,7 +1,7 @@
 # 🟢 Status do Projeto
 
-> **Versão Atual:** 1.0.0 (Production)
-> **Última Atualização:** Agosto de 2026
+> **Versão Atual:** 1.1.0 (Production)
+> **Última Atualização:** Novembro de 2026 (Lançamento do single "CANGAÇO")
 
 ## 🚀 Ambiente de Produção
 * **Status:** Online / Estável
